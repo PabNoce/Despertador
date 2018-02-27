@@ -8,6 +8,7 @@ package despertador;
 import javax.swing.JOptionPane;
 
 /**
+ * Botones permite al usuario configurar el reloj y la alarma
  *
  * @author pnocedalopez
  */
@@ -15,6 +16,10 @@ public class Botones {
 
     public static boolean stop = false;
 
+    /**
+     * Muestra un menú con las opciones disponibles para el usuario
+     * @param alarm recive un objeto alarma que modifica cuando es necesario
+     */
     public static void menu(Alarma alarm) {
         boolean rep = true;
 

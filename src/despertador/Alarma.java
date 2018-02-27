@@ -6,7 +6,7 @@
 package despertador;
 
 /**
- *
+ * Alarma almacena los datos de la programacion del despertador
  * @author pnocedalopez
  */
 public class Alarma {

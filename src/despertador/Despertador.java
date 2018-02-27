@@ -14,7 +14,7 @@ import static despertador.Alarma.on;
 import static despertador.Botones.stop;
 
 /**
- *
+ * Programa de un reloj con una alarma programable
  * @author pnocedalopez
  */
 public class Despertador {
@@ -22,7 +22,8 @@ public class Despertador {
     Timer timer;
 
     /**
-     * @param args the command line arguments
+     *
+     * @param args
      */
     public static void main(String[] args) {
 
@@ -30,7 +31,9 @@ public class Despertador {
         new Despertador();
         Botones.menu(alarm);
     }
-
+/**
+ * 
+ */
     public Despertador() {
         //creamos un Timer
         timer = new Timer();
@@ -38,10 +41,15 @@ public class Despertador {
         timer.schedule(new TicTac(), 0, 1000);
     }
 
+    /**
+     *
+     */
     public class TicTac extends TimerTask {
 
         @Override
-
+        /**
+         *el run se ejecuta repetitivamente accediend oa la hora del ordenador 
+         */
         public void run() {
             Calendar calendar = Calendar.getInstance();
             int hora = calendar.get(Calendar.HOUR_OF_DAY);
