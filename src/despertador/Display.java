@@ -6,7 +6,6 @@
 package despertador;
 
 import java.awt.Toolkit;
-import java.util.Calendar;
 import javax.swing.JOptionPane;
 
 /**
