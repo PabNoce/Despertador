@@ -5,9 +5,7 @@
  */
 package despertador;
 
-import java.awt.Toolkit;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 import static despertador.Alarma.hour;
