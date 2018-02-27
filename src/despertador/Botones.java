@@ -12,18 +12,19 @@ import javax.swing.JOptionPane;
  * @author pnocedalopez
  */
 public class Botones {
-    
+
+    public static boolean stop = false;
+
     public static void menu(Alarma alarm) {
         boolean rep = true;
-      
-        
+
         do {
             String opcion = JOptionPane.showInputDialog(""
                     + "1: Posponer\n"
                     + "2: Mostrar Alarma\n"
                     + "3: Programar Alarma\n"
                     + "4: Encender/Apagar alarma\n"
-                    + "5: Apagar Reloj");
+                    + "5: Apagar Reloj\n");
             switch (opcion) {
                 case "1":
                     alarm.setMinute(alarm.getMinute() + 10);
@@ -33,7 +34,7 @@ public class Botones {
                     }
                     break;
                 case "2":
-                    Display.pantalla(alarm.getHour()+":"+alarm.getMinute());
+                    Display.pantalla(alarm.getHour() + ":" + alarm.getMinute());
                     break;
                 case "3":
                     alarm.setHour(Integer.parseInt(JOptionPane.showInputDialog("Introduce hora: ")));
@@ -47,7 +48,8 @@ public class Botones {
                     }
                     break;
                 case "5":
-                    
+                    stop = true;
+                    rep = false;
                     break;
                 default:
                     break;

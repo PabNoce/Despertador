@@ -13,6 +13,7 @@ import java.util.TimerTask;
 import static despertador.Alarma.hour;
 import static despertador.Alarma.minute;
 import static despertador.Alarma.on;
+import static despertador.Botones.stop;
 
 /**
  *
@@ -27,7 +28,7 @@ public class Despertador {
      */
     public static void main(String[] args) {
 
-        Alarma alarm = new Alarma(0,0);
+        Alarma alarm = new Alarma(0, 0);
         new Despertador();
         Botones.menu(alarm);
     }
@@ -44,11 +45,16 @@ public class Despertador {
         @Override
 
         public void run() {
-          Calendar calendar = Calendar.getInstance();
-        int hora = calendar.get(Calendar.HOUR_OF_DAY);
-        int minuto = calendar.get(Calendar.MINUTE);
-            if (hora==hour&&minuto==minute&&on==true) {
+            Calendar calendar = Calendar.getInstance();
+            int hora = calendar.get(Calendar.HOUR_OF_DAY);
+            int minuto = calendar.get(Calendar.MINUTE);
+            if (stop == true) {
+                timer.cancel();
+                timer.purge();
+            }
+            if (hora == hour && minuto == minute && on == true) {
                 Display.ring(hora, minuto);
+
             } else {
                 Display.reloj(hora, minuto, on);
             }
