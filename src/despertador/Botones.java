@@ -18,6 +18,7 @@ public class Botones {
 
     /**
      * Muestra un menú con las opciones disponibles para el usuario
+     *
      * @param alarm recive un objeto alarma que modifica cuando es necesario
      */
     public static void menu(Alarma alarm) {
@@ -59,6 +60,7 @@ public class Botones {
                 default:
                     break;
             }
+
         } while (rep == true);
     }
 }

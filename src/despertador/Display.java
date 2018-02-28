@@ -9,25 +9,30 @@ import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
- *Display se encarga de las salidas de audio y texto por pantalla
+ * Display se encarga de las salidas de audio y texto por pantalla
+ *
  * @author pnocedalopez
  */
 public class Display {
 
     static Toolkit toolkit = Toolkit.getDefaultToolkit();
-/**
- * pantalla imprime los mensajes que recive
- * @param mensaje es un string que contiene lo que se requiere imprimir
- */
+
+    /**
+     * pantalla imprime los mensajes que recive
+     *
+     * @param mensaje es un string que contiene lo que se requiere imprimir
+     */
     public static void pantalla(String mensaje) {
         JOptionPane.showMessageDialog(null, mensaje);
     }
-/**
- * metodo que muestra el reloj cada segundo junto con el estado de la alarma
- * @param hora hora actual del ordenador
- * @param minuto minuto actual
- * @param on está a true si la alarma está activada
- */
+
+    /**
+     * metodo que muestra el reloj cada segundo junto con el estado de la alarma
+     *
+     * @param hora hora actual del ordenador
+     * @param minuto minuto actual
+     * @param on está a true si la alarma está activada
+     */
     public static void reloj(int hora, int minuto, boolean on) {
         String activa;
 
@@ -38,13 +43,15 @@ public class Display {
         }
         System.out.println(hora + ":" + minuto + " ; " + activa);
     }
-/**
- * este metodo es llamado cuando la hora actual se corresponde con la alarma
- * @param hora hora actual del ordenador
- * @param minuto minuto actual
- */
+
+    /**
+     * este metodo es llamado cuando la hora actual se corresponde con la alarma
+     *
+     * @param hora hora actual del ordenador
+     * @param minuto minuto actual
+     */
     public static void ring(int hora, int minuto) {
         toolkit.beep();
-        System.out.println(hora + ":" + minuto + " ; "+"ALARMA");
+        System.out.println(hora + ":" + minuto + " ; " + "ALARMA");
     }
 }
